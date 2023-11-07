@@ -70,10 +70,18 @@ public class AssociativeArray<K, V> {
   public String toString() {
     String temp = "";
     //go through array and print keys and values
-    for (int i = 0; i < this.size; i++) {
-      temp += pairs[i].key + ": " + pairs[i].value + ", ";
+    if (this.size == 0){
+      return "{}";
     }
-    return "{" + temp + "}";
+    for (int i = 0; i < this.size; i++) {
+      if(i+1 == this.size){
+        temp += pairs[i].key + ": " + pairs[i].value;
+      }
+      else{
+      temp += pairs[i].key + ": " + pairs[i].value + ", ";
+      }
+    }
+    return "{ " + temp + " }";
   } // toString()
 
   // +----------------+----------------------------------------------
@@ -108,7 +116,7 @@ public class AssociativeArray<K, V> {
   public V get(K key) throws KeyNotFoundException {
     //return the value associated with a key, if not found then return an error
     for (int i = 0; i < size; i++) {
-      if (pairs[i].key == key) {
+      if (pairs[i].key.equals(key)) {
         return pairs[i].value;
       }
     }
@@ -121,7 +129,7 @@ public class AssociativeArray<K, V> {
   public boolean hasKey(K key) {
     //if the key is found return true, if not return 
     for (int i = 0; i < size; i++) {
-      if (pairs[i].key == key) {
+      if (pairs[i].key.equals(key)) {
         return true;
       }
     }
@@ -136,12 +144,12 @@ public class AssociativeArray<K, V> {
     int j = 0;
     //go through the array and when the key is found move the array one forward.
     for (int i = 0; i < size; i++) {
-      if (pairs[i].key == key) {
+      if (pairs[i].key.equals(key)) {
         for (j = i; j + 1 < size; j++) {
           pairs[j] = pairs[j + 1];
         }
-        pairs[j + 1] = null;
-        size--;
+        pairs[j] = null;
+        size = size - 1;
       }
     } // remove(K)
   }
