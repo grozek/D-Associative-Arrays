@@ -5,7 +5,7 @@ import java.math.BigInteger;
 /**
  * Experiments with our AssociativeArray class.
  *
- * @author Your Name Here
+ * @author Gabriela Roznawska
  * @author Samuel A. Rebelsky
  */
 public class AssociativeArrayExperiments {
@@ -54,7 +54,7 @@ public class AssociativeArrayExperiments {
     s2s.size();
     try { s2s.get("a"); } catch (Exception e) { }
     try { s2s.get("A"); } catch (Exception e) { }
-  } // expreimentStringsToStrings
+  } // expreimentStringsToStrings(PrintWriter)
 
   /**
    * Our second experiment: Associative arrays with big integers as
@@ -107,7 +107,5 @@ public class AssociativeArrayExperiments {
     pen.println("------------------------------------------------");
     pen.println();
   } // divider(PrintWriter)
-
-
 
 } // AssociativeArrayExperiments
