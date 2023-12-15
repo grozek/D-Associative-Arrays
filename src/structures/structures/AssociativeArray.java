@@ -145,6 +145,7 @@ public class AssociativeArray<K, V> {
           pairs[j] = pairs[j + 1];
         } // for
         pairs[j] = null;
+        size = size - 1;
       } // if
     } // for
   } // remove(K)
